@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "6VMDHVZGPD.jp.co.vsol.PasskeyRedirectDemo"
+        ],
+        "components": [
+          {
+            "/": "/auth/callback*",
+            "comment": "PasskeyRedirectDemo callback"
+          }
+        ]
+      }
+    ]
+  }
+}
