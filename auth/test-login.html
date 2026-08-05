@@ -53,7 +53,7 @@
         <code id="redirectValue"></code>
       </div>
 
-      <p><button id="redirectButton" type="button">テスト用コールバックを返す</button></p>
+      <p><a id="redirectLink" class="button" href="#" aria-disabled="true">テスト用コールバックを開く</a></p>
       <p id="status"></p>
     </main>
 
@@ -64,23 +64,22 @@
       const status = document.getElementById("status");
       const stateValue = document.getElementById("stateValue");
       const redirectValue = document.getElementById("redirectValue");
-      const redirectButton = document.getElementById("redirectButton");
+      const redirectLink = document.getElementById("redirectLink");
 
       stateValue.textContent = state || "(empty)";
       redirectValue.textContent = redirectUrl || "(empty)";
 
-      redirectButton.disabled = !redirectUrl;
+      redirectLink.setAttribute("aria-disabled", String(!redirectUrl));
       if (!redirectUrl) {
         status.textContent = "redirect_url がないためテストできません。";
       }
 
-      redirectButton.addEventListener("click", () => {
-        if (!redirectUrl) return;
+      if (redirectUrl) {
         const callback = new URL(redirectUrl);
         callback.searchParams.set("shortTimeCode", "TEST_SHORT_CODE");
         callback.searchParams.set("state", state);
-        window.location.href = callback.toString();
-      });
+        redirectLink.href = callback.toString();
+      }
     </script>
   </body>
 </html>
