@@ -7,7 +7,7 @@
         ],
         "components": [
           {
-            "/": "/auth/callback*",
+            "/": "/auth/callback.html*",
             "comment": "PasskeyRedirectDemo callback"
           }
         ]

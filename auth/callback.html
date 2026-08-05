@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Passkey callback fallback</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 32px 20px;
+        color: #111827;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      code {
+        word-break: break-all;
+      }
+      .panel {
+        margin-top: 24px;
+        padding: 16px;
+        border: 1px solid #d1d5db;
+        border-radius: 12px;
+        background: #f9fafb;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Callback fallback page</h1>
+      <p>この画面がブラウザに表示された場合、Universal Links がまだアプリへ紐づいていません。</p>
+      <div class="panel">
+        <div><strong>URL</strong></div>
+        <code id="currentUrl"></code>
+      </div>
+    </main>
+
+    <script>
+      document.getElementById("currentUrl").textContent = window.location.href;
+    </script>
+  </body>
+</html>
